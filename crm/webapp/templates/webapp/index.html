@@ -1,0 +1,19 @@
+<!-- cd crm, python manage.py runserver -->
+{% extends 'webapp/base.html' %}
+
+{% block content %}
+
+<br>
+<br>
+<div class="text-center">
+    <h3>ProTime: PROductivity like never before!</h3>
+    <h5>Optimize your time and resources to reach your goals</h5>
+    <br>
+    <hr>
+    <br>
+
+    <a class="btn btn-primary" href="{% url 'register' %}">Create profile &nbsp;<i class="fa fa-user-plus" aria-hidden="true"></i></a>
+    <!-- https://youtu.be/pqWyUAT38e0?t=4562 -->
+</div>
+    
+{% endblock %}

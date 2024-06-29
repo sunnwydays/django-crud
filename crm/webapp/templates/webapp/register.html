@@ -1,0 +1,30 @@
+{% extends 'webapp/base.html' %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <body>
+        <br>
+        <div class="container bg-light shadow-md p-5 form-layout">
+            <h3>Create your account</h3>
+            <h5>Start changing your life today!</h5>
+            <hr><br>
+            <form method="POST"> <!-- autocomplete="off" if you want -->
+                {% csrf_token %}
+                <!-- {{ form|crispy }}  csrf token thing prevents csrf attacks, split up each field for spacing -->
+                {{form.username|as_crispy_field}}
+                <br>
+                {{form.password1|as_crispy_field}}
+                <br>
+                {{form.password2|as_crispy_field}}
+                <br>
+                <button type="submit" class="btn btn-primary with-100 btn-block p-2">Create account &nbsp;<i class="fa fa-user" aria-hidden="true"></i></button>
+            <br>
+            <br>
+            <div class="text-center">
+                <p><a href="{% url 'my-login' %}">Already have an account?</a></p>
+            </div>
+        </div>
+    </body>
+
+{% endblock %}
